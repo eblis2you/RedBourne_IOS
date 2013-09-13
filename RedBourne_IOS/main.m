@@ -1,9 +1,9 @@
 //
 //  main.m
-//  RedBourne_IOS
+//  RedBourne
 //
-//  Created by Jerry on 13/09/13.
-//  Copyright (c) 2013 Qodo. All rights reserved.
+//  Created by Jerry on 22/08/13.
+//  Copyright (c) 2013 Jerry. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
