@@ -14,6 +14,12 @@
 
 - (void)UIInitialize
 {
+    NSLog(@"load first child!");
+    NSLog(@"load first child!");
+    NSLog(@"load first child!");
+    NSLog(@"load first child!");
+    NSLog(@"load first child!");
+
     //Grab a reference to the UISplitViewController
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     
