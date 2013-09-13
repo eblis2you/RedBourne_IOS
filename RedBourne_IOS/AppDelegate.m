@@ -29,6 +29,8 @@
     leftViewController.delegate = rightViewController;
     
     
+    NSLog(@"load first child!");
+    
 /*      ChildModel *firstChild = [[leftViewController childList] objectAtIndex:0];
     NSLog(@"load first child!");
 
