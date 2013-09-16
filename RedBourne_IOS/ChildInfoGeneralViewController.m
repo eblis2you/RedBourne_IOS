@@ -6,19 +6,19 @@
 //  Copyright (c) 2013 Qodo. All rights reserved.
 //
 
-#import "ChildInfoEditViewController.h"
+#import "ChildInfoGeneralViewController.h"
+#import "AFJSONRequestOperation.h"
+#import "UIImageView+AFNetworking.h"
 
-@interface ChildInfoEditViewController ()
+@interface ChildInfoGeneralViewController ()
 
 @property (nonatomic, strong) UISwitch *switchCtl;
-@property (strong, nonatomic) UITextField *firstNameField;
-@property (strong, nonatomic) UITextField *surNameField;
-@property (strong, nonatomic) UITextField *DOBField;
+@property (strong, nonatomic) UITextField *firstNameField, *surNameField, *MedicareNumberField;
 
 
 @end
 
-@implementation ChildInfoEditViewController
+@implementation ChildInfoGeneralViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -44,19 +44,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     self.view.backgroundColor = [UIColor whiteColor];
-    
+
+    //reuseable frame for elements
     CGRect frame = CGRectMake(50,40,130,30);
     
-    UILabel *generalTitle_1 = [[UILabel alloc] initWithFrame:frame];
-    generalTitle_1.text = @"Personal Info";
-    [self.view addSubview:generalTitle_1];
+    /*
+     Personal Info
+     */
     
-    frame = CGRectMake(50,190,130,30);
-    UILabel *generalTitle_2 = [[UILabel alloc] initWithFrame:frame];
-    generalTitle_2.text = @"Additional Info";
-    [self.view addSubview:generalTitle_2];
+    UILabel *generalTitleGeneralInfo = [[UILabel alloc] initWithFrame:frame];
+    generalTitleGeneralInfo.text = @"Personal Info";
+    [self.view addSubview:generalTitleGeneralInfo];
     
     frame = CGRectMake(235,60,100,30);
     UILabel *firstNameLabel = [[UILabel alloc] initWithFrame:frame];
@@ -68,12 +67,10 @@
     surnameNameLabel.text = @"Sur Name:";
     [self.view addSubview:surnameNameLabel];
     
-    frame = CGRectMake(195,140,120,30);
-    UILabel *DOB = [[UILabel alloc] initWithFrame:frame];
-    DOB.text = @"Date of Birth:";
-    [self.view addSubview:DOB];
-    
-    
+    frame = CGRectMake(235,138,100,30);
+    UILabel *DOBLabel = [[UILabel alloc] initWithFrame:frame];
+    DOBLabel.text = @"Date of Birth:";
+    [self.view addSubview:DOBLabel];
         
     frame = CGRectMake(320,56,200,30);
     self.firstNameField = [[UITextField alloc] initWithFrame:frame];
@@ -90,12 +87,72 @@
     [self.view addSubview:self.surNameField];
     
     frame = CGRectMake(320,140,200,30);
-    self.DOBField = [[UITextField alloc] initWithFrame:frame];
-    self.DOBField.borderStyle = UITextBorderStyleBezel;
-    self.DOBField.keyboardType = UIKeyboardTypeDefault;
-    self.DOBField.delegate = self;
-    [self.view addSubview:self.DOBField];
+    UITextField *DOBField = [[UITextField alloc] initWithFrame:frame];
+    DOBField.borderStyle = UITextBorderStyleBezel;
+    DOBField.keyboardType = UIKeyboardTypeDefault;
+    DOBField.delegate = self;
+    [self.view addSubview: DOBField];
+
     
+    /*
+     Additional Info
+     */
+    
+    frame = CGRectMake(50,190,130,30);
+    UILabel *generalTitleAdditionalInfo = [[UILabel alloc] initWithFrame:frame];
+    generalTitleAdditionalInfo.text = @"Additional Info";
+    [self.view addSubview:generalTitleAdditionalInfo];
+    
+    frame = CGRectMake(196,215,130,30);
+    UILabel *medicalNumber = [[UILabel alloc] initWithFrame:frame];
+    medicalNumber.text = @"Medicare Number";
+    [self.view addSubview:medicalNumber];
+    
+    frame = CGRectMake(195,252,130,30);
+    UILabel *registrationDate = [[UILabel alloc] initWithFrame:frame];
+    registrationDate.text = @"Registration Date";
+    [self.view addSubview:registrationDate];
+   
+    frame = CGRectMake(320,215,220,30);
+    UITextField *MedicareNumberField = [[UITextField alloc] initWithFrame:frame];
+    MedicareNumberField.borderStyle = UITextBorderStyleBezel;
+    MedicareNumberField.keyboardType = UIKeyboardTypeDefault;
+    MedicareNumberField.delegate = self;
+    [self.view addSubview: MedicareNumberField];
+    
+    frame = CGRectMake(320,250,220,30);
+    UITextField *RegistrationDate = [[UITextField alloc] initWithFrame:frame];
+    RegistrationDate.borderStyle = UITextBorderStyleBezel;
+    RegistrationDate.keyboardType = UIKeyboardTypeDefault;
+    RegistrationDate.delegate = self;
+    [self.view addSubview:RegistrationDate];
+
+    /*
+     Photo uploading
+     */
+
+    frame = CGRectMake(50,355,120,30);
+    UILabel *generalTitlePhotoUpload = [[UILabel alloc] initWithFrame:frame];
+    generalTitlePhotoUpload.text = @"Photo Upload";
+    [self.view addSubview:generalTitlePhotoUpload];
+    
+    
+    UIButton *photoUploadButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    photoUploadButton.frame = CGRectMake(185,353,161,30);
+    [photoUploadButton setTitle:@"Choose from Photo" forState:UIControlStateNormal];
+    [photoUploadButton addTarget:self action:@selector(saveName) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:photoUploadButton];
+
+    frame = CGRectMake(50,190,130,30);
+    UIImageView *photImage = [[UIImageView alloc] initWithFrame:frame];
+    [photImage removeFromSuperview];
+    photImage = nil;
+    [self.view addSubview:photImage];
+    
+    
+    
+        
+       
     UIButton *saveButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     saveButton.frame = CGRectMake(160,650,160,30);
     [saveButton setTitle:@"Save Name" forState:UIControlStateNormal];
@@ -172,9 +229,7 @@
         
         // in case the parent view draws with a custom color or gradient, use a transparent color
         _switchCtl.backgroundColor = [UIColor clearColor];
-		
         [self.view addSubview:_switchCtl];
-		
     }
     return _switchCtl;
 }

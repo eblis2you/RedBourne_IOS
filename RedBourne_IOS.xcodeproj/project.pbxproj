@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C4426C7017E2BAD8000635AC /* ChildInfoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4426C6917E2BAD8000635AC /* ChildInfoEditViewController.m */; };
+		C4426C7017E2BAD8000635AC /* ChildInfoGeneralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4426C6917E2BAD8000635AC /* ChildInfoGeneralViewController.m */; };
 		C4426C7117E2BAD8000635AC /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4426C6B17E2BAD8000635AC /* LeftViewController.m */; };
 		C4426C7217E2BAD8000635AC /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4426C6D17E2BAD8000635AC /* RightViewController.m */; };
 		C4426C7317E2BAD8000635AC /* SDSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C4426C6F17E2BAD8000635AC /* SDSegmentedControl.m */; };
@@ -199,11 +199,15 @@
 		C461563A17E2B9DE00A2188E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C461563917E2B9DE00A2188E /* Default@2x.png */; };
 		C461563C17E2B9DE00A2188E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C461563B17E2B9DE00A2188E /* Default-568h@2x.png */; };
 		C461563F17E2B9DE00A2188E /* RedBourne_IOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C461563D17E2B9DE00A2188E /* RedBourne_IOS.xcdatamodeld */; };
+		C4A5E7B117E691EC001A007E /* ChildInfoDisabilityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A5E7AF17E691EC001A007E /* ChildInfoDisabilityViewController.m */; };
+		C4A5E7B217E691EC001A007E /* ChildInfoDisabilityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4A5E7B017E691EC001A007E /* ChildInfoDisabilityViewController.xib */; };
+		C4A5E7B617E69EBC001A007E /* ChildInfoMedicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A5E7B417E69EBC001A007E /* ChildInfoMedicationViewController.m */; };
+		C4A5E7B717E69EBC001A007E /* ChildInfoMedicationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4A5E7B517E69EBC001A007E /* ChildInfoMedicationViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C4426C6817E2BAD8000635AC /* ChildInfoEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildInfoEditViewController.h; sourceTree = "<group>"; };
-		C4426C6917E2BAD8000635AC /* ChildInfoEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildInfoEditViewController.m; sourceTree = "<group>"; };
+		C4426C6817E2BAD8000635AC /* ChildInfoGeneralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildInfoGeneralViewController.h; sourceTree = "<group>"; };
+		C4426C6917E2BAD8000635AC /* ChildInfoGeneralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildInfoGeneralViewController.m; sourceTree = "<group>"; };
 		C4426C6A17E2BAD8000635AC /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
 		C4426C6B17E2BAD8000635AC /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
 		C4426C6C17E2BAD8000635AC /* RightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightViewController.h; sourceTree = "<group>"; };
@@ -414,6 +418,12 @@
 		C461563917E2B9DE00A2188E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		C461563B17E2B9DE00A2188E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C461563E17E2B9DE00A2188E /* RedBourne_IOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RedBourne_IOS.xcdatamodel; sourceTree = "<group>"; };
+		C4A5E7AE17E691EC001A007E /* ChildInfoDisabilityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildInfoDisabilityViewController.h; sourceTree = "<group>"; };
+		C4A5E7AF17E691EC001A007E /* ChildInfoDisabilityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildInfoDisabilityViewController.m; sourceTree = "<group>"; };
+		C4A5E7B017E691EC001A007E /* ChildInfoDisabilityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChildInfoDisabilityViewController.xib; sourceTree = "<group>"; };
+		C4A5E7B317E69EBC001A007E /* ChildInfoMedicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildInfoMedicationViewController.h; sourceTree = "<group>"; };
+		C4A5E7B417E69EBC001A007E /* ChildInfoMedicationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildInfoMedicationViewController.m; sourceTree = "<group>"; };
+		C4A5E7B517E69EBC001A007E /* ChildInfoMedicationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChildInfoMedicationViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -444,14 +454,18 @@
 		C4426C6717E2BABA000635AC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C4426C6817E2BAD8000635AC /* ChildInfoEditViewController.h */,
-				C4426C6917E2BAD8000635AC /* ChildInfoEditViewController.m */,
 				C4426C6A17E2BAD8000635AC /* LeftViewController.h */,
 				C4426C6B17E2BAD8000635AC /* LeftViewController.m */,
 				C4426C6C17E2BAD8000635AC /* RightViewController.h */,
 				C4426C6D17E2BAD8000635AC /* RightViewController.m */,
-				C4426C6E17E2BAD8000635AC /* SDSegmentedControl.h */,
-				C4426C6F17E2BAD8000635AC /* SDSegmentedControl.m */,
+				C4426C6817E2BAD8000635AC /* ChildInfoGeneralViewController.h */,
+				C4426C6917E2BAD8000635AC /* ChildInfoGeneralViewController.m */,
+				C4A5E7B317E69EBC001A007E /* ChildInfoMedicationViewController.h */,
+				C4A5E7B417E69EBC001A007E /* ChildInfoMedicationViewController.m */,
+				C4A5E7B517E69EBC001A007E /* ChildInfoMedicationViewController.xib */,
+				C4A5E7AE17E691EC001A007E /* ChildInfoDisabilityViewController.h */,
+				C4A5E7AF17E691EC001A007E /* ChildInfoDisabilityViewController.m */,
+				C4A5E7B017E691EC001A007E /* ChildInfoDisabilityViewController.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -702,6 +716,8 @@
 			children = (
 				C4426C9B17E2BB47000635AC /* Resources */,
 				C4426C7E17E2BB3E000635AC /* AFNetworking */,
+				C4426C6E17E2BAD8000635AC /* SDSegmentedControl.h */,
+				C4426C6F17E2BAD8000635AC /* SDSegmentedControl.m */,
 				C4426C7C17E2BB35000635AC /* placeholder.jpg */,
 				C461562D17E2B9DE00A2188E /* RedBourne_IOS-Info.plist */,
 				C461562E17E2B9DE00A2188E /* InfoPlist.strings */,
@@ -935,6 +951,8 @@
 				C4426DE117E2BB47000635AC /* tabbar-active@2x.png in Resources */,
 				C4426DE217E2BB47000635AC /* tabbar.png in Resources */,
 				C4426DE317E2BB47000635AC /* tabbar@2x.png in Resources */,
+				C4A5E7B217E691EC001A007E /* ChildInfoDisabilityViewController.xib in Resources */,
+				C4A5E7B717E69EBC001A007E /* ChildInfoMedicationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -948,7 +966,7 @@
 				C461563217E2B9DE00A2188E /* main.m in Sources */,
 				C461563617E2B9DE00A2188E /* AppDelegate.m in Sources */,
 				C461563F17E2B9DE00A2188E /* RedBourne_IOS.xcdatamodeld in Sources */,
-				C4426C7017E2BAD8000635AC /* ChildInfoEditViewController.m in Sources */,
+				C4426C7017E2BAD8000635AC /* ChildInfoGeneralViewController.m in Sources */,
 				C4426C7117E2BAD8000635AC /* LeftViewController.m in Sources */,
 				C4426C7217E2BAD8000635AC /* RightViewController.m in Sources */,
 				C4426C7317E2BAD8000635AC /* SDSegmentedControl.m in Sources */,
@@ -962,6 +980,8 @@
 				C4426C9817E2BB3E000635AC /* AFURLConnectionOperation.m in Sources */,
 				C4426C9917E2BB3E000635AC /* AFXMLRequestOperation.m in Sources */,
 				C4426C9A17E2BB3E000635AC /* UIImageView+AFNetworking.m in Sources */,
+				C4A5E7B117E691EC001A007E /* ChildInfoDisabilityViewController.m in Sources */,
+				C4A5E7B617E69EBC001A007E /* ChildInfoMedicationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

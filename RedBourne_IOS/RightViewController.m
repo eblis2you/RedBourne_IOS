@@ -8,7 +8,9 @@
 
 #import "RightViewController.h"
 #import "ChildModel.h"
-#import "ChildInfoEditViewController.h"
+#import "ChildInfoGeneralViewController.h"
+#import "ChildInfoDisabilityViewController.h"
+#import "ChildInfoMedicationViewController.h"
 #import "AFJSONRequestOperation.h"
 #import "UIImageView+AFNetworking.h"
 
@@ -44,23 +46,15 @@
     
     UIImage *navBarImage = [UIImage imageNamed:@"ipad-menubar-right.jpg"];
     [[UINavigationBar appearance] setBackgroundImage:navBarImage forBarMetrics:UIBarMetricsDefault];
-    
-    [self.navigationController.navigationBar setBackgroundImage:navBarImage
-                                                  forBarMetrics:UIBarMetricsDefault];
-    
+    [self.navigationController.navigationBar setBackgroundImage:navBarImage forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:215/255.0f green:75/255.0f blue:75/255.0f alpha:1.0f]];
-    
-    
-    
     UIColor* bgColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ipad-BG-pattern.png"]];
     [self.view setBackgroundColor:bgColor];
-    
-    
     self.navBarItem.titleView = self.segmentedControl;
     
     UIBarButtonItem *editChildButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
                                                                                      target:self
-                                                                                     action:@selector(editChildName)];
+                                                                                     action:@selector(editChildInfo)];
     self.navBarItem.rightBarButtonItem = editChildButton;
 }
 
@@ -81,11 +75,39 @@ Update the UI to reflect the child set on initial load.
     
 }
 
-- (void) editChildName {
-    ChildInfoEditViewController *profileEditVC = [[ChildInfoEditViewController alloc] init];
-    profileEditVC.child = self.child;
-    profileEditVC.modalPresentationStyle = UIModalPresentationFullScreen;
-    [self presentViewController:profileEditVC animated:YES completion:nil];    
+
+/*
+ Modifice Child information based on current segemented page selected. 
+ */
+
+- (void) editChildInfo {
+    
+    switch (self.segmentedControl.selectedSegmentIndex) {
+        case 0:
+        {
+            ChildInfoGeneralViewController *profileEditVC = [[ChildInfoGeneralViewController alloc] init];
+            profileEditVC.child = self.child;
+            profileEditVC.modalPresentationStyle = UIModalPresentationFullScreen;
+            [self presentViewController:profileEditVC animated:YES completion:nil];
+        }   break;
+        case 1:
+        {
+            
+            ChildInfoDisabilityViewController *disabilityEditVC = [[ChildInfoDisabilityViewController alloc] init];
+            disabilityEditVC.modalPresentationStyle = UIModalPresentationFullScreen;
+            [self presentViewController:disabilityEditVC animated:YES completion:nil];
+        }   break;
+        case 2:	
+        {
+            
+            ChildInfoMedicationViewController *medicationEditVC = [[ChildInfoMedicationViewController alloc] init];
+            medicationEditVC.modalPresentationStyle = UIModalPresentationFullScreen;
+            [self presentViewController:medicationEditVC animated:YES completion:nil];
+        }   break;
+        default:
+            break;
+    }
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -147,7 +169,6 @@ Update the UI to reflect the child set on initial load.
     [self.iconImageView removeFromSuperview];
     self.iconImageView = nil;
 
-    
     self.iconImageView = [[UIImageView alloc] init];
     self.iconImageView.frame = CGRectMake(20, 60, 120, 136);
     

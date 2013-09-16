@@ -14,11 +14,7 @@
 
 - (void)UIInitialize
 {
-    NSLog(@"load first child!");
-    NSLog(@"load first child!");
-    NSLog(@"load first child!");
-    NSLog(@"load first child!");
-    NSLog(@"load first child!");
+
 
     //Grab a reference to the UISplitViewController
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
@@ -35,7 +31,6 @@
     leftViewController.delegate = rightViewController;
     
     
-    NSLog(@"load first child!");
     
 /*      ChildModel *firstChild = [[leftViewController childList] objectAtIndex:0];
     NSLog(@"load first child!");

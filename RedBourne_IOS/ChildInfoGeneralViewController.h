@@ -10,7 +10,7 @@
 #import "ChildModel.h"
 
 
-@interface ChildInfoEditViewController : UIViewController <UITextFieldDelegate>
+@interface ChildInfoGeneralViewController : UIViewController <UITextFieldDelegate>
 
 @property (strong, nonatomic) ChildModel *child;
 
